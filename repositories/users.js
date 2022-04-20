@@ -10,12 +10,15 @@ class UsersRepository extends Repository {
   async comparePasswords(saved, supplied) {
     // Saved -> password saved in our database. 'hashed.salt'
     // Supplied -> password given to us by a user trying sign in
+    // Result: Add salt to supplied password to see if match
     const [hashed, salt] = saved.split(".");
     const hashedSuppliedBuf = await scrypt(supplied, salt, 64);
 
     return hashed === hashedSuppliedBuf.toString("hex");
   }
-
+  
+  // Password encrypt using scrypt method
+  // hash(Password+salt.salt)
   async create(attrs) {
     attrs.id = this.randomId();
 
