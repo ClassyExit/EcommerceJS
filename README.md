@@ -1,12 +1,11 @@
 # EcommerceJS
 RUNNING PROJECT:
-- Install nodejs
-- Download files and store in new directory
-- Open command line and cd into directory
-- Run the following;
- - npm install - installs all packages
- - npm install express
-- Run 'node index.js' to start local server
-- Open browser to localhost:3000
+1. Install Node.js
+2. Navigate to the project folder and run the following from a terminal:
+   - `npm init -y` (to create a Node.js project)
+   - `npm i express` (to install Express)
+   - `node server.js` (to run the server)
+3. Open `localhost` in a web browser, using the port specified in `server.js` e.g. http://localhost:3000/
+
 </br>
 - To add products to store, open localhost:3000/admin
